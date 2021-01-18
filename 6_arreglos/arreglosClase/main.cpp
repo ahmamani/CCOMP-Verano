@@ -3,6 +3,18 @@
 
 using namespace std;
 
+void intercambio(Estudiante &i, Estudiante &j) {
+    Estudiante tmp = i;
+    i = j;
+    j = tmp;
+}
+
+int invertir(Estudiante arr[], const int tam) {
+    for(int i = 0; i < tam/2; i++) {
+        intercambio(arr[i], arr[tam - i - 1]);
+    }
+}
+
 void print(const Estudiante arr[], const int tam) {
     cout << "[ " << endl;
     for(int i = 0; i < tam; i++)
@@ -29,5 +41,8 @@ int main() {
 
     print(arr, tam);
 
+    invertir(arr, tam);
+
+    print(arr, tam);
 
 }
