@@ -8,18 +8,6 @@ int main() {
 
     int *ptr;
 
-    ptr = &arr[0];
-    cout << ptr << endl;
-    cout << *ptr << endl;
-
-    ptr = &arr[1];
-    cout << ptr << endl;
-    cout << *ptr << endl;
-
-    ptr = &arr[2];
-    cout << ptr << endl;
-    cout << *ptr << endl;
-
     //---------------------------
     /*  
     * Aritmética de Punteros
@@ -35,7 +23,6 @@ int main() {
     cout << *ptr << endl;
     ptr++;
     cout << *ptr << endl;
-    
 
     return 0;
 }
