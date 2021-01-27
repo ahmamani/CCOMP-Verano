@@ -25,7 +25,10 @@ int main() {
         PointArray pa3 = pa2;
     }
 
-    
+    pa2.print();
+    pa2.push_back(b);
+
+    pa2.print();
 
     return 0;
 

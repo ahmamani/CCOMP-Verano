@@ -1,3 +1,4 @@
+#include <iostream>
 #include "PointArray.h"
 
 PointArray::PointArray() {
@@ -28,4 +29,24 @@ PointArray::~PointArray() {
 
 int PointArray::getSize() const {
     return size;
+}
+
+void PointArray::push_back(const Point &p) {
+    Point *tmp = new Point[size+1];
+    size++;
+    for(int i = 0; i < size-1; i++) {
+        tmp[i] = data[i]; 
+    }
+    tmp[size-1] = p;
+    delete[] data;
+    data = tmp;
+}
+
+void PointArray::print() const {
+    std::cout << "[ ";
+    for(int i = 0; i < size; i++) {
+        data[i].print();
+        std::cout << " ";
+    }
+    std::cout << "]" << std::endl;
 }

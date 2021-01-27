@@ -1,6 +1,8 @@
 #ifndef __POINT_H__
 #define __POINT_H__
 
+#include <iostream>
+
 class Point {
 
     private:
@@ -25,6 +27,10 @@ class Point {
 
         void setY(double y) {
             this->y;
+        }
+
+        void print() {
+            std::cout << "(" << x << ", " << y << ")"; 
         }
 
 };
