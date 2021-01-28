@@ -11,7 +11,8 @@ class PointArray {
     private:
         Point *data;
         int size;
-    
+        void resize(int newSize);
+
     public:
         PointArray();
         PointArray(const Point arr[], const int size);
