@@ -32,7 +32,7 @@ int PointArray::getSize() const {
 }
 
 void PointArray::resize(int newSize) {
-    Point *tmp = new Point(newSize);
+    Point *tmp = new Point[newSize];
     int minSize = (newSize > size) ? size : newSize;
     
     for(int i = 0 ; i < minSize; i++)
@@ -50,14 +50,15 @@ void PointArray::push_back(const Point &p) {
 
 void PointArray::insert(const int pos, const Point &p){
     resize(size+1);
-    for(int i = size-1; i > pos; i--)
+    for(int i = size-1; i > pos; i--){
         data[i] = data[i-1];
+    }
 
     data[pos] = p;
 }
 
 void PointArray::remove(const int pos) {
-    for(int i = pos; i < size - 2; i++)
+    for(int i = pos; i < size - 1; i++)
         data[i] = data[i+1];
     resize(size - 1);
 }
@@ -69,4 +70,16 @@ void PointArray::print() const {
         std::cout << " ";
     }
     std::cout << "]" << std::endl;
+}
+
+Point *PointArray::get(const int pos) {
+    return pos >= 0 && pos < size ? data + pos : nullptr;
+}
+
+const Point *PointArray::get(const int pos) const {
+    return pos >= 0 && pos < size ? data + pos : nullptr;
+}
+
+void PointArray::clear() {
+    resize(0);
 }

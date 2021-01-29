@@ -26,8 +26,14 @@ int main() {
     }
 
     pa2.print();
+    cout << "\nPush_back : ";
     pa2.push_back(b);
-
+    pa2.print();
+    cout << "\ninsert : ";
+    pa2.insert(1, c);
+    pa2.print();
+    cout << "\nremove : ";
+    pa2.remove(1);
     pa2.print();
 
     return 0;

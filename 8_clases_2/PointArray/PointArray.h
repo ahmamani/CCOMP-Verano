@@ -44,6 +44,12 @@ class PointArray {
         * */
         void print() const;
 
+        void clear();
+
+        Point *get(const int pos);
+
+        const Point *get(const int pos) const;
+
 };
 
 #endif
