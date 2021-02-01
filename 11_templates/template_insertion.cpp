@@ -29,6 +29,14 @@ ostream& operator<<(ostream& output, const Point &p) {
     return output;
 }
 
+bool operator< (const Point &a,const Point &b){
+	if ((a.getX() < b.getX()) and (a.getY() < b.getY())) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
 int main() {
 
     int arrInts[] = {4, 5, 6, 3, 55, 10};
