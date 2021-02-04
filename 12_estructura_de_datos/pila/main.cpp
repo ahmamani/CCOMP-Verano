@@ -5,9 +5,19 @@ using namespace std;
 
 int main() {
 
-    MyStack s;
+    MyStack<int> s, r;
 
-    cout << s.empty() << endl;
+    s.push(1);
+    s.push(2);
+    s.push(3);
+
+    r.push(4);
+    r.push(5);
+    r.push(6);
+
+    MyStack<int> t = s + r;
+
+    cout << t << endl;
 
     return 0;
 }
